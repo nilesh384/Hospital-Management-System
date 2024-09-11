@@ -9,13 +9,16 @@ public class HospitalManagementSystem {
     
     private static final String url = "jdbc:mysql://localhost:3306/hospital";
     private static final String username = "root";
-    private static final String password = "Gforgoat2****0";
 
-    public static void main(String[] args) throws InterruptedException {
+
+    public static void main(String[] args) throws InterruptedException, SQLException {
         Scanner scanner = new Scanner(System.in);
 
         try{
-            Connection connection = DriverManager.getConnection(url, username, password);
+            System.out.print("Enter database password: ");
+            String pass = scanner.next();
+            System.out.println();
+            Connection connection = DriverManager.getConnection(url, username, pass);
             patient patient = new patient(connection, scanner);
             doctor doctor = new doctor(connection);
 
@@ -62,7 +65,9 @@ public class HospitalManagementSystem {
             }
 
         }catch(SQLException e){
-            e.printStackTrace();
+            System.out.println("Enter the correct password");
+            Thread.sleep(1500);
+            System.out.println();
         }
         scanner.close();
     }
@@ -162,8 +167,4 @@ public class HospitalManagementSystem {
         System.out.println();
     }
     
-    
-    
-    
-
 }
