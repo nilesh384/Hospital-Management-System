@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run HospitalManagementSystem",
+      "request": "launch",
+      "mainClass": "HospitalManagementSystem",
+      "cwd": "${workspaceFolder}",
+      "classPaths": [
+        "${workspaceFolder}/bin",
+        "${workspaceFolder}/lib/mysql-connector-j-9.0.0.jar"
+      ]
+    }
+  ]
+}

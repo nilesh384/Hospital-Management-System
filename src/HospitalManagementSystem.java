@@ -13,7 +13,7 @@ public class HospitalManagementSystem {
 
     public static void main(String[] args) throws InterruptedException, SQLException {
         Scanner scanner = new Scanner(System.in);
-
+        
         try{
             System.out.print("Enter database password: ");
             String pass = scanner.next();
@@ -66,6 +66,7 @@ public class HospitalManagementSystem {
 
         }catch(SQLException e){
             System.out.println("Enter the correct password");
+            e.printStackTrace();
             Thread.sleep(1500);
             System.out.println();
         }
